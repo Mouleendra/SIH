@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-rALUdERr4zL3phWXTCJ2+0V8w1pAKU8KTeC9Adts4L/wP3pvVZb1pMUp1nZ8Haxo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-1tXJfjlw6f0ZykVqoLsBrKJ8Ja8kIuouErzY6X1RbFawngzIazqp0P0k0WShUtF+" crossorigin="anonymous">
+    </script>
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgb(39, 39, 39);
+        }
+
+        .containerimage {
+            height: 100vh;
+            background-color: rgb(39, 39, 39);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 black 10px rgba(0,0,0,.2);
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgb(153, 247, 246);
+            padding: 30px 40px;
+
+        }
+
+        .wrapper h1 {
+            font-size: 35px;
+            text-align: center;
+            color: rgb(255, 252, 252);
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 40px;
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            padding: 10px 45px;
+        }
+
+        .input-box input::placeholder {
+            color: rgb(255, 255, 255);
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+        }
+
+        .remember-forget {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14.5px;
+            margin: 10px 0;
+            color: rgb(255, 255, 255);
+        }
+
+        .remember-forget label input {
+            accent-color: #fff;
+            margin-right: 3px;
+        }
+
+        .remember-forget a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .remember-forget a:hover {
+            text-decoration: underline;
+        }
+
+        .btn{
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .a{
+
+            box-shadow: 0 0 10px rgb(97, 235, 233);
+        }
+
+        .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0;
+            color: rgb(255, 255, 255);
+        }
+
+        .register-link p a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerimage">
+        <div class="wrapper">
+            <form action="{% url 'home' %}" method="post" >
+                {% csrf_token %}
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" name="Username" placeholder="Username" required>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx bx-lock'></i>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox"> Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn a d-flex justify-content-center align-items-center" style="color:antiquewhite">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+                <p style="color:rgb(255, 238, 238); font-size:110%; text-align:center;"> Or sign up using</p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col col-12 d-flex justify-content-center">
+                        <button type="button" class="btn iconButtono btn-light" onclick="signupWith('Facebook')" style="margin-right: 2px;">
+                            <img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-512.png" style="width:40px;height:40px;">
+                        </button>
+                        <button type="button" class="btn iconButtont btn-light" onclick="signupWith('Twitter')">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" style="width:40px;height:40px;">
+                        </button>
+                        <button type="button" class="btn iconButtonth btn-light" onclick="signupWith('Google')">
+                            <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-48/32/google_search_online_social_media-512.png" style="width:40px;height:40px;">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function signupWith(platform) {
+            if (platform === 'Facebook') {
+                window.location.href = "https://www.facebook.com";
+            } else if (platform === 'Twitter') {
+                window.location.href = "https://www.twitter.com";
+            } else if (platform === 'Google') {
+                window.location.href = "https://www.google.com";
+            } else {
+                alert('Unknown platform: ' + platform);
+            }
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
+
