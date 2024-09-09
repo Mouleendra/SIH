@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech Recognition</title>
+</head>
+<body>
+    <h1>Upload an Audio File</h1>
+    <form action="{% url 'process_audio' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="audio" accept="audio/*" required>
+        <button type="submit">Upload and Process</button>
+    </form>
+</body>
+</html>

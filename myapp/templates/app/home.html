@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-rALUdERr4zL3phWXTCJ2+0V8w1pAKU8KTeC9Adts4L/wP3pvVZb1pMUp1nZ8Haxo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-1tXJfjlw6f0ZykVqoLsBrKJ8Ja8kIuouErzY6X1RbFawngzIazqp0P0k0WShUtF+" crossorigin="anonymous"></script>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .navbar-nav {
+            margin-right: auto; /* Aligns the navbar items to the left */
+        }
+        .search-bar {
+            margin-left: auto; /* Aligns the search bar to the right */
+        }
+        .a{
+  background: linear-gradient(to right, 
+  #ffab96, #5de8a0);
+    background-size: cover; /* Ensures the image covers the entire container */ /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: 100%;
+    
+}
+.nav-link {
+    position: relative; /* To position the pseudo-element relative to the nav-link */
+    padding-bottom: 5px; /* Add space below the text */
+    text-decoration: none; /* Remove default underline */
+}
+
+.nav-link::after {
+    content: ''; /* Required to display the pseudo-element */
+    position: absolute; /* Position it absolutely relative to the nav-link */
+    left: 0; /* Align to the left edge of the nav-link */
+    bottom: 0; /* Position it at the bottom of the nav-link */
+    width: 100%; /* Full width of the nav-link */
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(28, 69, 8); /* Color of the underline */
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+}
+
+.nav-link:hover::after {
+    background-color: darkgreen; /* Optional: Change underline color on hover */
+}
+.b{
+    box-shadow:0 0 40px rgb(10, 12, 12);
+}
+
+
+      
+    </style>
+</head>
+<body>
+    <div class="container-fluid a" style="height: 100vh;">
+        <div class="row align-items-center" style="padding-left:2%;height:20vh;">
+            <div class ="col col-4 d-flex justify content-start">
+                <div style="font-size: 350%;color:rgb(52, 28, 28);outline-color: aquamarine;" style="width:6rem;height:6rem;"><img src="https://cdn0.iconfinder.com/data/icons/phosphor-bold-vol-3-1/256/path-duotone-64.png"
+                    >Flow Finder</div>
+            </div>
+            <div class="col col-4 d-flex justify-content-center">
+                <nav class="navbar navbar-expand-lg">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right:3rem; color:rgb(35, 71, 13);font-size: 140%;" href="#"><b>Home</b></a>
+                                <hl></hl>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right:3rem;color:rgb(35, 71, 13);font-size: 140%;" href="#"><b>Features</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right:3rem;color:rgb(35, 71, 13);font-size: 140%;" href="#"><b>About Us</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+         
+            <div class="col col-3 search-bar">
+                <form class="d-flex" action="{% url 'map' %}" method="post" >
+                        {% csrf_token %}
+                        <button class="btn btn-primary" style="border-radius: 1rem; width: 14rem; height: 3.5rem; border: 2px solid #5999dc; color: #f4f9ff; font-size: 1rem; font-weight: bold;" type="submit">
+                            Get Started
+                        </button>
+                        
+                </form>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center" style="height:70vh;padding-left:5%;">
+            <div class="col-6 d-flex align-items-center">
+           <h1 style="font-size: 280%;color: rgb(48, 73, 25);">Ready to explore? Launch our Map App to find the best routes and destinations.</h1>
+            </div>
+            <div class="col col-2"></div>
+            <div class="col col-4">
+                <a href="/your-target-url" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="width: 18rem; border-radius: 2rem; height: 15rem; box-shadow: 0 0 40px rgb(1, 92, 58); cursor: pointer; transition: transform 0.3s;">
+                        <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/2068/2068868.png" alt="Card image cap" style="height: 14rem; border-radius: 2rem 2rem 0 0;">
+                        <div class="card-body">
+                            <h5 class="card-text" style="color: rgb(7, 75, 7); text-align: center; margin-top: 2vh;">Your compass for every journey</h5>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid b h-100" style="background-color: #ffe8d4;">
+       <div class="row justify-content-center" style="padding-top: 30px;height:50vh;">
+        <div class="col col-4",style="padding-left:4%;">
+         <img src="https://lh6.googleusercontent.com/Lqmx5WuBtYngOXamj-SubSHHnvMSNes0B-zKwcUntheki2rAdbTMkZBsdsY4pzlOEaHZmMp0XxoN9WYQmxZUaCzCZddVF0I5gODIp_kWcVrpBVembbt7UMgxYgEOfqUVsw=w1280" style="width:25rem;height:20rem;border-radius: 1rem;">
+        </div>
+        <div class="col col-6">
+            <h1 style="font-size: 320%;margin-top:10%;color:rgb(171, 49, 49)">About Us</h1>
+            <h3 style="margin-top: 4%;color:darkslategray">Welcome to Flowfinder an online platform.What we offer is to  aid the commuters overcome  traffic congestion
+
+            </h3>
+        </div>
+       </div>
+       <div class="row justify-content-center" style="padding-top: 30px;height: 50vh;">
+        <div class="col col-6">
+            <h1 style="font-size: 320%;margin-top: 5%;color:rgb(171, 49, 49)">Our Vision</h1>
+            <h3 style="margin-top: 4%;color:darkslategray">We, as student developers, aim to help people avoid frustration by offering suggestions before they get stuck in traffic.
+
+
+            </h3>
+        </div>
+        <div class="col col-4",style="padding-left:4%;padding-top:30px;height:50vh;">
+         <img src="https://lh5.googleusercontent.com/Jv3BrNjpyCu8OBTaqxy6loZ8P-j7xaICDC0PEMeko4cD9x3G1FmAclhdI7HNDIe3yDzRmDVjnuNt67jl7vtWOyqSbEbU0RbepV13tgz97acDLPR_f5wCzHq-hqMPRB41=w1280" style="width:25rem;height:20rem;border-radius: 1rem;">
+        </div>
+        
+       </div>
+       <div class="row justify-content-center" style="padding-top: 30px;height:50vh;background-color:#ffe8d4;">
+        <div class="col col-10">
+            <h1 style="font-size: 320%;margin-top: 5%;color:rgb(171, 49, 49)">What we offer
+            </h1>
+            <h3 style="margin-top: 4%;color: darkslategray;">Join our vibrant community where developers and students are connected.Give us feedback.Your feedback is really valuable</h3>
+
+
+            </h3>
+        </div>
+       </div>
+       <div class="row justify-content-center" style="padding-top: 30px;height:60vh;background-color: #ffe8d4;;">
+        <div class="col col-10">
+            <h1 style="font-size: 320%;margin-top: 5%;color:rgb(171, 49, 49)">Our Team
+            </h1>
+            <h3 style="margin-top: 4%;color:darkslategray">Join our vibrant community where developers and students are connected.Give us feedback.Your feedback is really valuable</h3>
+
+
+            </h3>
+        </div>
+       </div>
+     <div class="row d-flex justify-content-center" style="background-color: rgb(46, 46, 46);height:40vh;">
+        <div class="col col-5 justify-content-center"style="margin-left:10px";>
+            <h3 class="d-flex justify-content-center " style="margin-top: 2rem;color:rgb(136, 138, 138)">Know us more on</h3>
+            <div style="margin-top: 2.5rem;"></div>
+            <button type="button" class="btn" style="border-radius:2.25rem;"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/Twitter-256.png" style="width:3rem;height:3rem;" ></button>
+            <button type="button" class="btn" style="border-radius:2.25rem;"><img src="https://cdn1.iconfinder.com/data/icons/ionicons-fill-vol-2/512/logo-facebook-256.png" style="width:3rem;height:3rem;"></button>
+            <button type="button" class="btn " style="border-radius:2.25rem;"><img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/globe-256.png" style="width:3rem;height:3rem;" ></button>
+            <button type="button" class="btn " style="border-radius:2.25rem;"><img src=" https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Linkedin_svg-512.png" style="width:3rem;height:3rem;"></button>
+            <button type="button" class="btn " style="border-radius:2.25rem;"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands-1/512/344_Twitter_T_logo-256.png"  style="width:3rem;height:3rem;"></button>
+            <button type="button" class="btn" style="border-radius:2.25rem;"><img src="https://cdn1.iconfinder.com/data/icons/bootstrap-fill-vol-2/16/google-512.png"style="width:3rem;height:3rem;" ></button>
+            <button type="button" class="btn" style="border-radius:2.25rem;"><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-512.png" style="width:3rem;height:3rem;" ></button>
+        </div>
+        <div style="margin-bottom:4vh;"></div>
+    <hr>
+    <div class="d-flex justify-content-center"><p style="margin-top:1vh;color:rgb(133, 126, 126)">Untitled.   All rights reserved.</p></div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
